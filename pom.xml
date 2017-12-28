@@ -40,7 +40,7 @@
 		<connection>scm:git:git@github.com:azalbargi/devops.git</connection>
 		<developerConnection>scm:git:git@github.com:azalbargi/devops.git</developerConnection>
 		<url>git@github.com:azalbargi/devops.gitt</url>
-		<tag>HEAD</tag>
+		<tag>v0.0.2</tag>
 	</scm>
 
 	<dependencies>
