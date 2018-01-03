@@ -30,7 +30,7 @@ node {
       }
    }
    stage('Deploy') {
-       start "" "%PROGRAMFILES%\Git\git-bash.exe" -c 'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
+       start "" "%PROGRAMFILES%\Git\git-bash.exe" -c "'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'"
    }
    stage("Smoke Test"){
        start "" "%PROGRAMFILES%\Git\git-bash.exe" -c "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
