@@ -35,4 +35,16 @@ node {
    stage("Smoke Test"){
        sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
    }
+   stage("Deploy to QA"){
+   	   sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:9080/manager/text/deploy?path=/devops&update=true"'
+   }
+   stage("Smoke Test QA"){
+   	   sh "curl --retry-delay 10 --retry 5 http://localhost:9080/devops"
+   }
+   stage("Deploy to Prod"){
+   	   sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:7080/manager/text/deploy?path=/devops&update=true"'
+   }
+   stage("Smoke Test Prod"){
+   	   sh "curl --retry-delay 10 --retry 5 http://localhost:7080/devops"
+   }
 }
