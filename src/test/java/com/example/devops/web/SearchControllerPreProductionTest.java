@@ -13,7 +13,7 @@ public class SearchControllerPreProductionTest extends SearchControllerTest {
 	@Override
 	public void setUp() throws Exception {
 		// TODO Auto-generated method stub
-		super.baseUrl = baseUrl;
+		super.baseUrl = this.baseUrl;
 		super.setUp();
 	}
 

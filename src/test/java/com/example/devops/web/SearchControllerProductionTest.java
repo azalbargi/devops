@@ -8,7 +8,7 @@ import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 
 public class SearchControllerProductionTest extends SearchControllerTest {
 
-	private String baseUrl = "http://localhost:9080/devops";
+	private String baseUrl = "http://localhost:7080/devops";
 
 	@Override
 	public void setUp() throws Exception {
