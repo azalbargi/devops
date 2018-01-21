@@ -23,6 +23,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.gargoylesoftware.htmlunit.WebClient;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @WebAppConfiguration
@@ -34,9 +36,13 @@ public class WelcomeControllerTest {
 	@Autowired
 	private WebApplicationContext context;
 
+	private WebClient webClient;
+
 	@Before
 	public void setUp() throws Exception {
 		mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+		webClient = new WebClient();
+		webClient.getOptions().setJavaScriptEnabled(false);
 		items = new ArrayList<Item>();
 
 		Item item = new Item();
@@ -93,7 +99,7 @@ public class WelcomeControllerTest {
 		item.setId(new Long(4));
 		item.setFranchise("SAU01");
 		item.setOperator("KWT05");
-		item.setMarketcode("Exepense");
+		item.setMarketcode("Expense");
 		item.setAmount(6574);
 		item.setStatus("Open");
 		item.setCreated(new Date());
@@ -109,7 +115,7 @@ public class WelcomeControllerTest {
 		item.setId(new Long(5));
 		item.setFranchise("SAU01");
 		item.setOperator("DEU01");
-		item.setMarketcode("Exepense");
+		item.setMarketcode("Expense");
 		item.setAmount(750);
 		item.setStatus("In Progress");
 		item.setCreated(new Date());

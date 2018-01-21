@@ -15,13 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WelcomeController {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	public static ArrayList<Item> items;
 
 	@RequestMapping("/")
 	public String welcome(Model model) {
 		logger.info("Proccessing index request");
-		model.addAttribute("course", "DevOps TEST Demo");
+		model.addAttribute("course", "DevOps Demo");
 
-		ArrayList<Item> items = new ArrayList<Item>();
+		items = new ArrayList<Item>();
 		Item item = new Item();
 
 		// 1
@@ -76,7 +77,7 @@ public class WelcomeController {
 		item.setId(new Long(4));
 		item.setFranchise("SAU01");
 		item.setOperator("KWT05");
-		item.setMarketcode("Exepense");
+		item.setMarketcode("Expense");
 		item.setAmount(6574);
 		item.setStatus("Open");
 		item.setCreated(new Date());
@@ -92,7 +93,7 @@ public class WelcomeController {
 		item.setId(new Long(5));
 		item.setFranchise("SAU01");
 		item.setOperator("DEU01");
-		item.setMarketcode("Exepense");
+		item.setMarketcode("Expense");
 		item.setAmount(750);
 		item.setStatus("In Progress");
 		item.setCreated(new Date());

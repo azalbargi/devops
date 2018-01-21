@@ -30,4 +30,10 @@ public class Search {
 		this.marketCode = marketCode;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return franchise + " / " + operator + " / " + marketCode;
+	}
+
 }
